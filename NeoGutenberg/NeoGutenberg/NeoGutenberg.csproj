@@ -1,0 +1,355 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1BA691A2-8C07-4C8C-9BE0-9AB748446017}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NeoGutenberg</RootNamespace>
+    <AssemblyName>NeoGutenberg</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44303</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.30.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.30\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Politica.aspx" />
+    <Content Include="Contacto.aspx" />
+    <Content Include="Controls\Ctrl_Barra.ascx" />
+    <Content Include="Controls\Ctrl_Busqueda.ascx" />
+    <Content Include="Controls\Ctrl_Cabecera.ascx" />
+    <Content Include="Controls\Ctrl_Editor.ascx" />
+    <Content Include="Controls\Ctrl_Editor_Desplegable.ascx" />
+    <Content Include="Controls\Ctrl_Nota.ascx" />
+    <Content Include="Controls\Ctrl_NotaBusqueda.ascx" />
+    <Content Include="Controls\Ctrl_NotaChica.ascx" />
+    <Content Include="Controls\Ctrl_NotaCompleta.ascx" />
+    <Content Include="Controls\Ctrl_NotaGrande.ascx" />
+    <Content Include="Controls\Ctrl_NotaPorTag.ascx" />
+    <Content Include="Controls\Ctrl_Notas_Mas_Leidas.ascx" />
+    <Content Include="Controls\Ctrl_Nota_Desplegable.ascx" />
+    <Content Include="Controls\Ctrl_Pie.ascx" />
+    <Content Include="Controls\Ctrl_VerticalBox.ascx" />
+    <Content Include="Controls\Ctrl_Video.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="estilos.css" />
+    <Content Include="form.css" />
+    <Content Include="fotos-columnistas\Alfredo Koncurat 01.png" />
+    <Content Include="fotos-columnistas\Damian Stupenengo.png" />
+    <Content Include="fotos-columnistas\Tuti Telgarecz.png" />
+    <Content Include="fotos-columnistas\William Bergese.png" />
+    <Content Include="images\3052694w1033.jpg" />
+    <Content Include="images\apple-touch-icon-72x72.png" />
+    <Content Include="images\Banner nav.png" />
+    <Content Include="images\banner responsive.png" />
+    <Content Include="images\dolares_zucho_portada.jpg_1484051676.jpg" />
+    <Content Include="images\Dronacion727x409.gif" />
+    <Content Include="images\emprendedores.jpg" />
+    <Content Include="images\escuelas.jpg_1484051676.jpg" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\home_5.jpg" />
+    <Content Include="images\home_6.jpg" />
+    <Content Include="images\home_7.jpg" />
+    <Content Include="images\imagen prueba 1.jpg" />
+    <Content Include="images\imagen prueba 2.jpg" />
+    <Content Include="images\LOGO-HORIZONTAL-COLOR %281%29.png" />
+    <Content Include="images\LOGO-HORIZONTAL-COLOR.png" />
+    <Content Include="images\ME-BANNER-BLANCO-CON-SLOGAN-%282%29.png" />
+    <Content Include="images\ME-BANNER-COLOR-CON-SLOGAN-%282%29.png" />
+    <Content Include="images\MUNDO-HORIZONTAL-SIN-SLOGAN.png" />
+    <Content Include="LosQueSaben.aspx" />
+    <Content Include="losquesaben.css" />
+    <Content Include="Nota-Autor-Gral.aspx" />
+    <Content Include="NotasPorTag.aspx" />
+    <Content Include="QuienesSomos.aspx" />
+    <Content Include="ResultadoBusqueda.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Politica.aspx.cs">
+      <DependentUpon>Politica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Politica.aspx.designer.cs">
+      <DependentUpon>Politica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Barra.ascx.cs">
+      <DependentUpon>Ctrl_Barra.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Barra.ascx.designer.cs">
+      <DependentUpon>Ctrl_Barra.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Busqueda.ascx.cs">
+      <DependentUpon>Ctrl_Busqueda.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Busqueda.ascx.designer.cs">
+      <DependentUpon>Ctrl_Busqueda.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Cabecera.ascx.cs">
+      <DependentUpon>Ctrl_Cabecera.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Cabecera.ascx.designer.cs">
+      <DependentUpon>Ctrl_Cabecera.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Editor.ascx.cs">
+      <DependentUpon>Ctrl_Editor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Editor.ascx.designer.cs">
+      <DependentUpon>Ctrl_Editor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Editor_Desplegable.ascx.cs">
+      <DependentUpon>Ctrl_Editor_Desplegable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Editor_Desplegable.ascx.designer.cs">
+      <DependentUpon>Ctrl_Editor_Desplegable.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Nota.ascx.cs">
+      <DependentUpon>Ctrl_Nota.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Nota.ascx.designer.cs">
+      <DependentUpon>Ctrl_Nota.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_NotaBusqueda.ascx.cs">
+      <DependentUpon>Ctrl_NotaBusqueda.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_NotaBusqueda.ascx.designer.cs">
+      <DependentUpon>Ctrl_NotaBusqueda.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_NotaChica.ascx.cs">
+      <DependentUpon>Ctrl_NotaChica.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_NotaChica.ascx.designer.cs">
+      <DependentUpon>Ctrl_NotaChica.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_NotaCompleta.ascx.cs">
+      <DependentUpon>Ctrl_NotaCompleta.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_NotaCompleta.ascx.designer.cs">
+      <DependentUpon>Ctrl_NotaCompleta.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_NotaGrande.ascx.cs">
+      <DependentUpon>Ctrl_NotaGrande.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_NotaGrande.ascx.designer.cs">
+      <DependentUpon>Ctrl_NotaGrande.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_NotaPorTag.ascx.cs">
+      <DependentUpon>Ctrl_NotaPorTag.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_NotaPorTag.ascx.designer.cs">
+      <DependentUpon>Ctrl_NotaPorTag.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Notas_Mas_Leidas.ascx.cs">
+      <DependentUpon>Ctrl_Notas_Mas_Leidas.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Notas_Mas_Leidas.ascx.designer.cs">
+      <DependentUpon>Ctrl_Notas_Mas_Leidas.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Nota_Desplegable.ascx.cs">
+      <DependentUpon>Ctrl_Nota_Desplegable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Nota_Desplegable.ascx.designer.cs">
+      <DependentUpon>Ctrl_Nota_Desplegable.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Pie.ascx.cs">
+      <DependentUpon>Ctrl_Pie.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Pie.ascx.designer.cs">
+      <DependentUpon>Ctrl_Pie.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_VerticalBox.ascx.cs">
+      <DependentUpon>Ctrl_VerticalBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_VerticalBox.ascx.designer.cs">
+      <DependentUpon>Ctrl_VerticalBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Video.ascx.cs">
+      <DependentUpon>Ctrl_Video.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Ctrl_Video.ascx.designer.cs">
+      <DependentUpon>Ctrl_Video.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LosQueSaben.aspx.cs">
+      <DependentUpon>LosQueSaben.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LosQueSaben.aspx.designer.cs">
+      <DependentUpon>LosQueSaben.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nota-Autor-Gral.aspx.cs">
+      <DependentUpon>Nota-Autor-Gral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nota-Autor-Gral.aspx.designer.cs">
+      <DependentUpon>Nota-Autor-Gral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotasPorTag.aspx.cs">
+      <DependentUpon>NotasPorTag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotasPorTag.aspx.designer.cs">
+      <DependentUpon>NotasPorTag.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuienesSomos.aspx.cs">
+      <DependentUpon>QuienesSomos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuienesSomos.aspx.designer.cs">
+      <DependentUpon>QuienesSomos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultadoBusqueda.aspx.cs">
+      <DependentUpon>ResultadoBusqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResultadoBusqueda.aspx.designer.cs">
+      <DependentUpon>ResultadoBusqueda.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NegocioGutenberg\NegocioGutenberg.csproj">
+      <Project>{8ee93bf2-1cb4-4b97-8458-8b041a723cb9}</Project>
+      <Name>NegocioGutenberg</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="portadas\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62877</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44303/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

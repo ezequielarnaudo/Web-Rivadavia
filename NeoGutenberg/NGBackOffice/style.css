@@ -1,0 +1,13 @@
+.body-table{
+    background-color: lightgray;
+    border: 2px solid black;
+}
+
+.titulos{
+    color: orange !important;
+}
+
+.input-group-prepend{
+    background-color: lightgray;
+    border-radius: 2px solid black;
+}

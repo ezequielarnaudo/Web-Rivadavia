@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GutenbergModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="ExecuteNEOSQL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="sqlCommand" Type="varchar(max)" Mode="In" />
+        </Function>
+        <Function Name="INSERT_Editor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombreEditor" Type="varchar" Mode="In" />
+          <Parameter Name="profesion" Type="varchar" Mode="In" />
+          <Parameter Name="urlFoto" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="INSERT_Nota" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTag" Type="bigint" Mode="In" />
+          <Parameter Name="idEditor" Type="bigint" Mode="In" />
+          <Parameter Name="titulo" Type="varchar(max)" Mode="In" />
+          <Parameter Name="subtitulo" Type="varchar(max)" Mode="In" />
+          <Parameter Name="foto" Type="varchar" Mode="In" />
+          <Parameter Name="descripcionFoto" Type="varchar(max)" Mode="In" />
+          <Parameter Name="textoCompleto" Type="varchar(max)" Mode="In" />
+          <Parameter Name="fechaGuardado" Type="varchar" Mode="In" />
+          <Parameter Name="fechaPublicacion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Search_Nota_Indexed" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchString" Type="varchar" Mode="In" />
+          <Parameter Name="pag" Type="bigint" Mode="In" />
+          <Parameter Name="cantporpag" Type="bigint" Mode="In" />
+          <Parameter Name="idIgnoredTag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="Search_Note" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchString" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SELECT_Editor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SELECT_Editor_BY_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idEditor" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SELECT_Nota" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SELECT_Nota_BY_EDITOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idEditor" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SELECT_Nota_BY_FECHA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fechaDesde" Type="varchar" Mode="In" />
+          <Parameter Name="fechaHasta" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SELECT_Nota_BY_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idNota" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SELECT_Nota_BY_TAG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SELECT_Nota_BY_TOP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SELECT_Nota_Ultimas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cantNotas" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SELECT_Nota_Ultimas_BY_TAG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTag" Type="bigint" Mode="In" />
+          <Parameter Name="cantNotas" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SELECT_Nota_Ultimas_BY_TAG_Count" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SELECT_Nota_Ultimas_BY_TAG_Indexed" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTag" Type="bigint" Mode="In" />
+          <Parameter Name="pag" Type="bigint" Mode="In" />
+          <Parameter Name="cantPorPag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SELECT_RedSocial_BY_EDITOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idEditor" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SELECT_Tag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SELECT_Tag_BY_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idTag" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="splitstring" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="stringToSplit" Type="varchar(max)" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Name" Type="nvarchar" MaxLength="500" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="UPDATE_ContadorNota" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idNota" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="UPDATE_NOTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idnota" Type="bigint" Mode="In" />
+          <Parameter Name="idtag" Type="bigint" Mode="In" />
+          <Parameter Name="ideditor" Type="bigint" Mode="In" />
+          <Parameter Name="titulo" Type="varchar(max)" Mode="In" />
+          <Parameter Name="subtitulo" Type="varchar(max)" Mode="In" />
+          <Parameter Name="foto" Type="varchar" Mode="In" />
+          <Parameter Name="descripcionfoto" Type="varchar(max)" Mode="In" />
+          <Parameter Name="textocompleto" Type="varchar(max)" Mode="In" />
+          <Parameter Name="fechaguardado" Type="varchar" Mode="In" />
+          <Parameter Name="fechapublicacion" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="GutenbergModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GutenbergModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GutenbergEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="ExecuteNEOSQL">
+            <Parameter Name="sqlCommand" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INSERT_Editor">
+            <Parameter Name="nombreEditor" Mode="In" Type="String" />
+            <Parameter Name="profesion" Mode="In" Type="String" />
+            <Parameter Name="urlFoto" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INSERT_Nota">
+            <Parameter Name="idTag" Mode="In" Type="Int64" />
+            <Parameter Name="idEditor" Mode="In" Type="Int64" />
+            <Parameter Name="titulo" Mode="In" Type="String" />
+            <Parameter Name="subtitulo" Mode="In" Type="String" />
+            <Parameter Name="foto" Mode="In" Type="String" />
+            <Parameter Name="descripcionFoto" Mode="In" Type="String" />
+            <Parameter Name="textoCompleto" Mode="In" Type="String" />
+            <Parameter Name="fechaGuardado" Mode="In" Type="String" />
+            <Parameter Name="fechaPublicacion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Search_Nota_Indexed" ReturnType="Collection(GutenbergModel.Search_Nota_Indexed_Result)">
+            <Parameter Name="searchString" Mode="In" Type="String" />
+            <Parameter Name="pag" Mode="In" Type="Int64" />
+            <Parameter Name="cantporpag" Mode="In" Type="Int64" />
+            <Parameter Name="idIgnoredTag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="Search_Note" ReturnType="Collection(GutenbergModel.Search_Note_Result)">
+            <Parameter Name="searchString" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_Editor" ReturnType="Collection(GutenbergModel.SELECT_Editor_Result)" />
+          <FunctionImport Name="SELECT_Editor_BY_ID" ReturnType="Collection(GutenbergModel.SELECT_Editor_BY_ID_Result)">
+            <Parameter Name="idEditor" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_Nota" ReturnType="Collection(GutenbergModel.SELECT_Nota_Result)" />
+          <FunctionImport Name="SELECT_Nota_BY_EDITOR" ReturnType="Collection(GutenbergModel.SELECT_Nota_BY_EDITOR_Result)">
+            <Parameter Name="idEditor" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_Nota_BY_FECHA" ReturnType="Collection(GutenbergModel.SELECT_Nota_BY_FECHA_Result)">
+            <Parameter Name="fechaDesde" Mode="In" Type="String" />
+            <Parameter Name="fechaHasta" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_Nota_BY_ID" ReturnType="Collection(GutenbergModel.SELECT_Nota_BY_ID_Result)">
+            <Parameter Name="idNota" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_Nota_BY_TAG" ReturnType="Collection(GutenbergModel.SELECT_Nota_BY_TAG_Result)">
+            <Parameter Name="idTag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_Nota_BY_TOP" ReturnType="Collection(GutenbergModel.SELECT_Nota_BY_TOP_Result)" />
+          <FunctionImport Name="SELECT_Nota_Ultimas" ReturnType="Collection(GutenbergModel.SELECT_Nota_Ultimas_Result)">
+            <Parameter Name="cantNotas" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_Nota_Ultimas_BY_TAG" ReturnType="Collection(GutenbergModel.SELECT_Nota_Ultimas_BY_TAG_Result)">
+            <Parameter Name="idTag" Mode="In" Type="Int64" />
+            <Parameter Name="cantNotas" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_Nota_Ultimas_BY_TAG_Count" ReturnType="Collection(Int32)">
+            <Parameter Name="idTag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_Nota_Ultimas_BY_TAG_Indexed" ReturnType="Collection(GutenbergModel.SELECT_Nota_Ultimas_BY_TAG_Indexed_Result)">
+            <Parameter Name="idTag" Mode="In" Type="Int64" />
+            <Parameter Name="pag" Mode="In" Type="Int64" />
+            <Parameter Name="cantPorPag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_RedSocial_BY_EDITOR" ReturnType="Collection(GutenbergModel.SELECT_RedSocial_BY_EDITOR_Result)">
+            <Parameter Name="idEditor" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SELECT_Tag" ReturnType="Collection(GutenbergModel.SELECT_Tag_Result)" />
+          <FunctionImport Name="SELECT_Tag_BY_ID" ReturnType="Collection(GutenbergModel.SELECT_Tag_BY_ID_Result)">
+            <Parameter Name="idTag" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="splitstring" IsComposable="true" ReturnType="Collection(String)">
+            <Parameter Name="stringToSplit" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UPDATE_ContadorNota">
+            <Parameter Name="idNota" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="UPDATE_NOTA">
+            <Parameter Name="idnota" Mode="In" Type="Int64" />
+            <Parameter Name="idtag" Mode="In" Type="Int64" />
+            <Parameter Name="ideditor" Mode="In" Type="Int64" />
+            <Parameter Name="titulo" Mode="In" Type="String" />
+            <Parameter Name="subtitulo" Mode="In" Type="String" />
+            <Parameter Name="foto" Mode="In" Type="String" />
+            <Parameter Name="descripcionfoto" Mode="In" Type="String" />
+            <Parameter Name="textocompleto" Mode="In" Type="String" />
+            <Parameter Name="fechaguardado" Mode="In" Type="String" />
+            <Parameter Name="fechapublicacion" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Search_Nota_Indexed_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="descripcionFoto" Nullable="false" />
+          <Property Type="String" Name="textoCompleto" Nullable="false" />
+          <Property Type="DateTime" Name="fechaGuardado" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fechaPublicacion" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="IdTablaNota" Nullable="false" />
+          <Property Type="Int64" Name="IDChoto" Nullable="false" />
+          <Property Type="Int64" Name="contador" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="Search_Note_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="descripcionFoto" Nullable="false" />
+          <Property Type="String" Name="textoCompleto" Nullable="false" />
+          <Property Type="DateTime" Name="fechaGuardado" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fechaPublicacion" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="IdTablaNota" Nullable="false" />
+          <Property Type="Int64" Name="IDChoto" Nullable="false" />
+          <Property Type="Int64" Name="contador" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Editor_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="String" Name="nombreEditor" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="profesion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="urlFoto" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Editor_BY_ID_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="String" Name="nombreEditor" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="profesion" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="urlFoto" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Nota_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idTag" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="descripcionFoto" Nullable="false" />
+          <Property Type="String" Name="textoCompleto" Nullable="false" />
+          <Property Type="DateTime" Name="fechaGuardado" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fechaPublicacion" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Nota_BY_EDITOR_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idTag" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="descripcionFoto" Nullable="false" />
+          <Property Type="String" Name="textoCompleto" Nullable="false" />
+          <Property Type="DateTime" Name="fechaGuardado" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fechaPublicacion" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Nota_BY_FECHA_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idTag" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="descripcionFoto" Nullable="false" />
+          <Property Type="String" Name="textoCompleto" Nullable="false" />
+          <Property Type="DateTime" Name="fechaGuardado" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fechaPublicacion" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Nota_BY_ID_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idTag" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="descripcionFoto" Nullable="false" />
+          <Property Type="String" Name="textoCompleto" Nullable="false" />
+          <Property Type="DateTime" Name="fechaGuardado" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fechaPublicacion" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Nota_BY_TAG_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idTag" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="descripcionFoto" Nullable="false" />
+          <Property Type="String" Name="textoCompleto" Nullable="false" />
+          <Property Type="DateTime" Name="fechaGuardado" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fechaPublicacion" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Nota_BY_TOP_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idTag" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="descripcionFoto" Nullable="false" />
+          <Property Type="String" Name="textoCompleto" Nullable="false" />
+          <Property Type="DateTime" Name="fechaGuardado" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fechaPublicacion" Nullable="false" Precision="23" />
+          <Property Type="Int64" Name="contador" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Nota_Ultimas_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idTag" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="descripcionFoto" Nullable="false" />
+          <Property Type="String" Name="textoCompleto" Nullable="false" />
+          <Property Type="DateTime" Name="fechaGuardado" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fechaPublicacion" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Nota_Ultimas_BY_TAG_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idTag" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="descripcionFoto" Nullable="false" />
+          <Property Type="String" Name="textoCompleto" Nullable="false" />
+          <Property Type="DateTime" Name="fechaGuardado" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fechaPublicacion" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Nota_Ultimas_BY_TAG_Indexed_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idTag" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="titulo" Nullable="false" />
+          <Property Type="String" Name="subtitulo" Nullable="false" />
+          <Property Type="String" Name="foto" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="descripcionFoto" Nullable="false" />
+          <Property Type="String" Name="textoCompleto" Nullable="false" />
+          <Property Type="DateTime" Name="fechaGuardado" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fechaPublicacion" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="SELECT_RedSocial_BY_EDITOR_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="Int64" Name="idEditor" Nullable="false" />
+          <Property Type="String" Name="socialURL" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="socialImage" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Tag_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SELECT_Tag_BY_ID_Result">
+          <Property Type="Int64" Name="Id" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GutenbergModelStoreContainer" CdmEntityContainer="GutenbergEntities" >
+          <FunctionImportMapping FunctionImportName="ExecuteNEOSQL" FunctionName="GutenbergModel.Store.ExecuteNEOSQL" />
+          <FunctionImportMapping FunctionImportName="INSERT_Editor" FunctionName="GutenbergModel.Store.INSERT_Editor" />
+          <FunctionImportMapping FunctionImportName="INSERT_Nota" FunctionName="GutenbergModel.Store.INSERT_Nota" />
+          <FunctionImportMapping FunctionImportName="Search_Nota_Indexed" FunctionName="GutenbergModel.Store.Search_Nota_Indexed">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.Search_Nota_Indexed_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="descripcionFoto" ColumnName="descripcionFoto" />
+                <ScalarProperty Name="textoCompleto" ColumnName="textoCompleto" />
+                <ScalarProperty Name="fechaGuardado" ColumnName="fechaGuardado" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+                <ScalarProperty Name="IdTablaNota" ColumnName="IdTablaNota" />
+                <ScalarProperty Name="IDChoto" ColumnName="IDChoto" />
+                <ScalarProperty Name="contador" ColumnName="contador" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Search_Note" FunctionName="GutenbergModel.Store.Search_Note">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.Search_Note_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="descripcionFoto" ColumnName="descripcionFoto" />
+                <ScalarProperty Name="textoCompleto" ColumnName="textoCompleto" />
+                <ScalarProperty Name="fechaGuardado" ColumnName="fechaGuardado" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+                <ScalarProperty Name="IdTablaNota" ColumnName="IdTablaNota" />
+                <ScalarProperty Name="IDChoto" ColumnName="IDChoto" />
+                <ScalarProperty Name="contador" ColumnName="contador" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Editor" FunctionName="GutenbergModel.Store.SELECT_Editor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Editor_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nombreEditor" ColumnName="nombreEditor" />
+                <ScalarProperty Name="profesion" ColumnName="profesion" />
+                <ScalarProperty Name="urlFoto" ColumnName="urlFoto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Editor_BY_ID" FunctionName="GutenbergModel.Store.SELECT_Editor_BY_ID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Editor_BY_ID_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nombreEditor" ColumnName="nombreEditor" />
+                <ScalarProperty Name="profesion" ColumnName="profesion" />
+                <ScalarProperty Name="urlFoto" ColumnName="urlFoto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Nota" FunctionName="GutenbergModel.Store.SELECT_Nota">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Nota_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idTag" ColumnName="idTag" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="descripcionFoto" ColumnName="descripcionFoto" />
+                <ScalarProperty Name="textoCompleto" ColumnName="textoCompleto" />
+                <ScalarProperty Name="fechaGuardado" ColumnName="fechaGuardado" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Nota_BY_EDITOR" FunctionName="GutenbergModel.Store.SELECT_Nota_BY_EDITOR">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Nota_BY_EDITOR_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idTag" ColumnName="idTag" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="descripcionFoto" ColumnName="descripcionFoto" />
+                <ScalarProperty Name="textoCompleto" ColumnName="textoCompleto" />
+                <ScalarProperty Name="fechaGuardado" ColumnName="fechaGuardado" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Nota_BY_FECHA" FunctionName="GutenbergModel.Store.SELECT_Nota_BY_FECHA">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Nota_BY_FECHA_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idTag" ColumnName="idTag" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="descripcionFoto" ColumnName="descripcionFoto" />
+                <ScalarProperty Name="textoCompleto" ColumnName="textoCompleto" />
+                <ScalarProperty Name="fechaGuardado" ColumnName="fechaGuardado" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Nota_BY_ID" FunctionName="GutenbergModel.Store.SELECT_Nota_BY_ID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Nota_BY_ID_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idTag" ColumnName="idTag" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="descripcionFoto" ColumnName="descripcionFoto" />
+                <ScalarProperty Name="textoCompleto" ColumnName="textoCompleto" />
+                <ScalarProperty Name="fechaGuardado" ColumnName="fechaGuardado" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Nota_BY_TAG" FunctionName="GutenbergModel.Store.SELECT_Nota_BY_TAG">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Nota_BY_TAG_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idTag" ColumnName="idTag" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="descripcionFoto" ColumnName="descripcionFoto" />
+                <ScalarProperty Name="textoCompleto" ColumnName="textoCompleto" />
+                <ScalarProperty Name="fechaGuardado" ColumnName="fechaGuardado" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Nota_BY_TOP" FunctionName="GutenbergModel.Store.SELECT_Nota_BY_TOP">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Nota_BY_TOP_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idTag" ColumnName="idTag" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="descripcionFoto" ColumnName="descripcionFoto" />
+                <ScalarProperty Name="textoCompleto" ColumnName="textoCompleto" />
+                <ScalarProperty Name="fechaGuardado" ColumnName="fechaGuardado" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+                <ScalarProperty Name="contador" ColumnName="contador" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Nota_Ultimas" FunctionName="GutenbergModel.Store.SELECT_Nota_Ultimas">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Nota_Ultimas_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idTag" ColumnName="idTag" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="descripcionFoto" ColumnName="descripcionFoto" />
+                <ScalarProperty Name="textoCompleto" ColumnName="textoCompleto" />
+                <ScalarProperty Name="fechaGuardado" ColumnName="fechaGuardado" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Nota_Ultimas_BY_TAG" FunctionName="GutenbergModel.Store.SELECT_Nota_Ultimas_BY_TAG">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Nota_Ultimas_BY_TAG_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idTag" ColumnName="idTag" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="descripcionFoto" ColumnName="descripcionFoto" />
+                <ScalarProperty Name="textoCompleto" ColumnName="textoCompleto" />
+                <ScalarProperty Name="fechaGuardado" ColumnName="fechaGuardado" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Nota_Ultimas_BY_TAG_Count" FunctionName="GutenbergModel.Store.SELECT_Nota_Ultimas_BY_TAG_Count" />
+          <FunctionImportMapping FunctionImportName="SELECT_Nota_Ultimas_BY_TAG_Indexed" FunctionName="GutenbergModel.Store.SELECT_Nota_Ultimas_BY_TAG_Indexed">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Nota_Ultimas_BY_TAG_Indexed_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idTag" ColumnName="idTag" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="subtitulo" ColumnName="subtitulo" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="descripcionFoto" ColumnName="descripcionFoto" />
+                <ScalarProperty Name="textoCompleto" ColumnName="textoCompleto" />
+                <ScalarProperty Name="fechaGuardado" ColumnName="fechaGuardado" />
+                <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_RedSocial_BY_EDITOR" FunctionName="GutenbergModel.Store.SELECT_RedSocial_BY_EDITOR">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_RedSocial_BY_EDITOR_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="idEditor" ColumnName="idEditor" />
+                <ScalarProperty Name="socialURL" ColumnName="socialURL" />
+                <ScalarProperty Name="socialImage" ColumnName="socialImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Tag" FunctionName="GutenbergModel.Store.SELECT_Tag">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Tag_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SELECT_Tag_BY_ID" FunctionName="GutenbergModel.Store.SELECT_Tag_BY_ID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="GutenbergModel.SELECT_Tag_BY_ID_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="splitstring" FunctionName="GutenbergModel.Store.splitstring" />
+          <FunctionImportMapping FunctionImportName="UPDATE_ContadorNota" FunctionName="GutenbergModel.Store.UPDATE_ContadorNota" />
+          <FunctionImportMapping FunctionImportName="UPDATE_NOTA" FunctionName="GutenbergModel.Store.UPDATE_NOTA" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

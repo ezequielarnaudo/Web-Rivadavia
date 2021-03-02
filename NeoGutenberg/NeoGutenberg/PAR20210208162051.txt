@@ -1,0 +1,1 @@
+<neotext><idnota>5</idnota><fechap>01/01/2021</fechap><timep>10:35</timep><imgpor>http://webapi.mundoempresas.com.ar:80/portadas/0bf8b7f4-b0eb-46f1-bf83-e95a1302c083.jpg</imgpor><volpor>volanta</volpor><subt>copete</subt><tag>1</tag><autor>5</autor><h1>Nueva Nota</h1><p>Esto es una nota</p></neotext>
