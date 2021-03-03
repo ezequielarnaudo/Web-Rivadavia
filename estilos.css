@@ -104,14 +104,14 @@ th{
 }
 
 .navegacion{
-   background-color: #00374f;
+   background-color: #047606;
     height: 85px;
     padding: 5px;
 }
 
 .navbar-dark .navbar-nav .nav-link{
   color: #ffffff;
-  font-size: 14px;
+  font-size: 20px;
   margin-left: 8px;
 }
 
@@ -125,13 +125,13 @@ th{
 }
 
 #basicExampleNav{
-  background-color:#00374f;
+  background-color:#047606;
   width: 100%;
 }
 
 .dropdown-menu{
   color: white;
-  background-color:#00374f ;
+  background-color:#047606 ;
 }
 
 a.dropdown-toggle{
@@ -443,7 +443,7 @@ li{
 
 
 /* Main Footer */
-footer .main-footer{	padding: 20px 0;	background: #00374f;}
+footer .main-footer{	padding: 20px 0;	background: #047606;}
 footer ul{	padding-left: 0;	list-style: none;}
 
 /* Copy Right Footer */
@@ -479,7 +479,7 @@ footer.light .footer-copyright{	background: none repeat scroll 0 0 rgba(255, 255
 .widget.no-box{	padding: 0;	background-color: transparent;	margin-bottom: 40px;
 	box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none;}
 .widget.subscribe p{	margin-bottom: 18px;}
-.widget li a{	color: #ff8d1e;}
+.widget li a{	color: white;}
 .widget li a:hover{	
   color: #4b92dc;
   text-decoration: none;
@@ -556,7 +556,7 @@ transition: all 250ms ease-in-out 0s;
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #00374f; 
+  background: #047606; 
   border-radius: 10px;
 }
 
